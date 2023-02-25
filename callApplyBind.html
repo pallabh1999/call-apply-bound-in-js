@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call method apply method and bind method in js</title>
+</head>
+<body>
+    <h1>call apply bind</h1>
+    <p>in this we have done how to utilize call method apply method and bind method</p>
+</body>
+<script>
+    let name={
+  first_name:"pall",
+  last_name:"abhi",
+}
+
+let print_full_name = function(hometown,state)
+{
+  console.log(this.first_name+" "+this.last_name+" "+"from"+" "+hometown+","+state);
+}
+print_full_name.call(name ,"bbsr","odisha");
+
+let name2 ={
+  first_name:"ur",
+  last_name:"mila",
+}
+print_full_name.call(name2,"unit8","bbsr")
+
+// the only difference between call and apply method is the way we pass arguments
+// apply method
+print_full_name.apply(name2,["unit8","bbsr"])
+
+// bind method;
+// bind method is same as call method the only difference between bind and call method is bind returns the
+// whole method and can be invoked later..
+
+let printMyname = print_full_name.bind(name2,"unit8","bbsr");
+console.log(printMyname);
+</script>
+</html>
